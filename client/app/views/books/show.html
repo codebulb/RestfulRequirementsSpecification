@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ 'book.show.title' | translate:entity }}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form ng-submit="execute()">
+            <h1>{{ 'book.show.title' | translate:entity }}</h1>
+            <div class="container">
+                <div class="row">
+                    <div class='col-sm-6'>
+                        <label for="id">{{ 'entity.id' | translate }}</label>
+                    </div>
+                    <div class='col-sm-6'>
+                        <span id="id">{{entity.id}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='col-sm-6'>
+                        <label for="isbn">{{ 'book.isbn' | translate }}</label>
+                    </div>
+                    <div class='col-sm-6'>
+                        <span id="isbn">{{entity.isbn}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='col-sm-6'>
+                        <label for="id">{{ 'book.title' | translate }}</label>
+                    </div>
+                    <div class='col-sm-6'>
+                        <span id="title">{{entity.title}}</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 20px">
+                <input class="btn btn-primary" type="submit" value="Order" />
+                <input class="btn btn-default" type="button" onclick="window.location.href = '#/books';return false;" value="{{ 'general.back' | translate }}" />
+            </div>
+        </form>
+    </body>
+</html>

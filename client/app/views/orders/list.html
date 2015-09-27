@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ 'order.list.title' | translate:user }}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>{{ 'order.list.title' | translate:user }}</h1>
+        <div ng-show="errors != null" class="alert alert-danger" role="alert">
+            <ul>
+                <li ng-repeat="error in errors">{{error}}</li>
+            </ul>
+        </div>
+        <div ng-show="created != null"  class="alert alert-success" role="alert">
+            <span data-translate="order.created" data-translate-value-id="{{created}}"></span>
+            <a href="" ng-click="delete(created)" class="pull-right">{{ 'general.delete' | translate }}</a>
+        </div>
+        <ul>
+            <li ng-repeat="entity in entities">
+                {{entity.id}}. {{entity.book.title}} ({{entity.deliveryDate | date:'yyyy-MM-dd'}}) <a href="" ng-click="delete(entity.id)">X</a>
+            </li>
+        </ul>
+    </body>
+</html>

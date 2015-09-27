@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ 'book.list.title' | translate }}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>{{ 'book.list.title' | translate }}</h1>
+        <ul>
+            <li ng-repeat="entity in entities">
+                <a href="" ng-click="show(entity)">{{entity.isbn}}: {{entity.title}}</a>
+            </li>
+        </ul>
+    </body>
+</html>
